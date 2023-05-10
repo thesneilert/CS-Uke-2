@@ -12,9 +12,28 @@ var persons = new List<Student>
     new("Nora", "30", "Håndball"),
     new("Espen", "20", "Tennis"),
     new("Tore", "26", "Tennis"),
-    new("Geir", "42", "Fotball")
+    new("Geir", "42", "Fotball"),
+    new("Thomas", "34", "Håndball"),
+    new("Kamilla", "21", "Tennis"),
+    new("Tiril", "22", "Fotball")
 };
-if (menyvalg == "2")
+
+
+if (menyvalg == "1")
+{
+    Console.WriteLine("Hva er ditt navn?");
+    var navn = Console.ReadLine();
+    Console.WriteLine("Hvor gammel er du?");
+    var age = Console.ReadLine();
+    Console.WriteLine("Hvilket kurs går du på?");
+    var course = Console.ReadLine();
+
+    persons.Add(new Student(navn, age, course));
+    foreach (var x in persons) Console.WriteLine(x.Name);
+}
+
+
+else if (menyvalg == "2")
 {
     Console.WriteLine("Skriv Fotball, Håndball eller Tennis for å vise påmeldte:");
 
@@ -36,16 +55,4 @@ if (menyvalg == "2")
             Console.WriteLine("Skriv Fotball, Håndball eller Tennis for å vise påmeldte:");
         }
     }
-}
-else if (menyvalg == "1")
-{
-    Console.WriteLine("Hva er ditt navn?");
-    var navn = Console.ReadLine();
-    Console.WriteLine("Hvor gammel er du?");
-    var age = Console.ReadLine();
-    Console.WriteLine("Hvilket kurs går du på?");
-    var course = Console.ReadLine();
-
-    persons.Add(new Student(navn, age, course));
-    foreach (var x in persons) Console.WriteLine(x.Name);
 }

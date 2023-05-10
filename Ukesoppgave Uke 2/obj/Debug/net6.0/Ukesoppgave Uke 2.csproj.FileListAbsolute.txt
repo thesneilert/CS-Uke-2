@@ -13,3 +13,18 @@
 /Users/eilertrygh/RiderProjects/Ukesoppgave Uke 2/Ukesoppgave Uke 2/obj/Debug/net6.0/Ukesoppgave Uke 2.pdb
 /Users/eilertrygh/RiderProjects/Ukesoppgave Uke 2/Ukesoppgave Uke 2/obj/Debug/net6.0/Ukesoppgave Uke 2.genruntimeconfig.cache
 /Users/eilertrygh/RiderProjects/Ukesoppgave Uke 2/Ukesoppgave Uke 2/obj/Debug/net6.0/ref/Ukesoppgave Uke 2.dll
+C:\Users\pexil\Documents\GitHub\CS-Uke-2\Ukesoppgave Uke 2\bin\Debug\net6.0\Ukesoppgave Uke 2.exe
+C:\Users\pexil\Documents\GitHub\CS-Uke-2\Ukesoppgave Uke 2\bin\Debug\net6.0\Ukesoppgave Uke 2.deps.json
+C:\Users\pexil\Documents\GitHub\CS-Uke-2\Ukesoppgave Uke 2\bin\Debug\net6.0\Ukesoppgave Uke 2.runtimeconfig.json
+C:\Users\pexil\Documents\GitHub\CS-Uke-2\Ukesoppgave Uke 2\bin\Debug\net6.0\Ukesoppgave Uke 2.dll
+C:\Users\pexil\Documents\GitHub\CS-Uke-2\Ukesoppgave Uke 2\bin\Debug\net6.0\Ukesoppgave Uke 2.pdb
+C:\Users\pexil\Documents\GitHub\CS-Uke-2\Ukesoppgave Uke 2\obj\Debug\net6.0\Ukesoppgave Uke 2.csproj.AssemblyReference.cache
+C:\Users\pexil\Documents\GitHub\CS-Uke-2\Ukesoppgave Uke 2\obj\Debug\net6.0\Ukesoppgave Uke 2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pexil\Documents\GitHub\CS-Uke-2\Ukesoppgave Uke 2\obj\Debug\net6.0\Ukesoppgave Uke 2.AssemblyInfoInputs.cache
+C:\Users\pexil\Documents\GitHub\CS-Uke-2\Ukesoppgave Uke 2\obj\Debug\net6.0\Ukesoppgave Uke 2.AssemblyInfo.cs
+C:\Users\pexil\Documents\GitHub\CS-Uke-2\Ukesoppgave Uke 2\obj\Debug\net6.0\Ukesoppgave Uke 2.csproj.CoreCompileInputs.cache
+C:\Users\pexil\Documents\GitHub\CS-Uke-2\Ukesoppgave Uke 2\obj\Debug\net6.0\Ukesoppgave Uke 2.dll
+C:\Users\pexil\Documents\GitHub\CS-Uke-2\Ukesoppgave Uke 2\obj\Debug\net6.0\refint\Ukesoppgave Uke 2.dll
+C:\Users\pexil\Documents\GitHub\CS-Uke-2\Ukesoppgave Uke 2\obj\Debug\net6.0\Ukesoppgave Uke 2.pdb
+C:\Users\pexil\Documents\GitHub\CS-Uke-2\Ukesoppgave Uke 2\obj\Debug\net6.0\Ukesoppgave Uke 2.genruntimeconfig.cache
+C:\Users\pexil\Documents\GitHub\CS-Uke-2\Ukesoppgave Uke 2\obj\Debug\net6.0\ref\Ukesoppgave Uke 2.dll
