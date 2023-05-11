@@ -1,74 +1,111 @@
 ﻿using Ukesoppgave_Uke_2;
 
-Console.WriteLine("Trykk 1 for å legge til bruker");
-Console.WriteLine("Trykk 2 for å filtrere kurs for brukere");
-Console.WriteLine("Trykk 3 for å se alle brukere");
-var menyvalg = Console.ReadLine();
-
-
-var persons = new List<Student>
+internal class Program
 {
-    new("Ola", "20", "Fotball"),
-    new("Nora", "30", "Håndball"),
-    new("Espen", "20", "Tennis"),
-    new("Tore", "26", "Tennis"),
-    new("Geir", "42", "Fotball"),
-    new("Thomas", "34", "Håndball"),
-    new("Kamilla", "21", "Tennis"),
-    new("Tiril", "22", "Fotball")
-};
-
-
-if (menyvalg == "1")
-{
-    Console.WriteLine("Hva er ditt navn?");
-    var navn = Console.ReadLine();
-    Console.WriteLine("Hvor gammel er du?");
-    var age = Console.ReadLine();
-    Console.WriteLine("Hvilket kurs går du på?");
-    var course = Console.ReadLine();
-
-    persons.Add(new Student(navn, age, course));
-    foreach (var x in persons) Console.WriteLine(x.Name);
-}
-
-
-else if (menyvalg == "2")
-{
-    Console.WriteLine("Skriv Fotball, Håndball eller Tennis for å vise påmeldte:");
-
-    var flag = true;
-    while (flag)
+    private static readonly List<Student> persons = new()
     {
-        var valg = Console.ReadLine();
-        Console.WriteLine($"\nDette er de påmeldte for {valg} kurset:");
-        foreach (var x in persons)
-            if (x.Course == valg)
-                Console.WriteLine("- " + x.Name);
+        new Student("Ola", "20", "Fotball"),
+        new Student("Nora", "30", "Håndball"),
+        new Student("Espen", "20", "Tennis"),
+        new Student("Tore", "26", "Tennis"),
+        new Student("Geir", "42", "Fotball"),
+        new Student("Thomas", "34", "Håndball"),
+        new Student("Kamilla", "21", "Tennis"),
+        new Student("Tiril", "22", "Fotball")
+    };
 
-        Console.WriteLine("\n\nSkriv Fotball, Håndball eller Tennis for å vise påmeldte,\n" +
-                          "eller trykk ENTER for å starte på nytt:");
+    public static void Main(string[] args)
+    {
+        MainMenu();
+    }
 
-        if (valg == "")
+    public static void MainMenu()
+    {
+        Console.WriteLine("Trykk 1 for å legge til bruker");
+        Console.WriteLine("Trykk 2 for å filtrere kurs for brukere");
+        Console.WriteLine("Trykk 3 for å se alle brukere");
+        var menyvalg = Console.ReadLine();
+
+        if (menyvalg == "1")
         {
-            Console.Clear();
-            Console.WriteLine("Skriv Fotball, Håndball eller Tennis for å vise påmeldte:");
+            AddUser();
+        }
+        else if (menyvalg == "2")
+        {
+            FilterCourses();
+        }
+        else if (menyvalg == "3")
+        {
+            DisplayUsers();
+        }
+        else
+        {
+            Console.WriteLine("Ugyldig valg. Prøv igjen.");
+            MainMenu();
         }
     }
-}
 
-
-else if (menyvalg == "3")
-{
-    var groupedPersons = persons.GroupBy(x => x.Course);
-
-    foreach (var x in groupedPersons)
+    public static void AddUser()
     {
-        Console.WriteLine($"Kurs: {x.Key}");
-        foreach (var person in x)
+        Console.ForegroundColor = ConsoleColor.DarkBlue;
+        Console.WriteLine("Hva er ditt navn?");
+        Console.ResetColor();
+        var navn = Console.ReadLine();
+        Console.ForegroundColor = ConsoleColor.DarkBlue;
+        Console.WriteLine("Hvor gammel er du?");
+        Console.ResetColor();
+        var age = Console.ReadLine();
+        Console.ForegroundColor = ConsoleColor.DarkBlue;
+        Console.WriteLine("Hvilket kurs går du på?");
+        Console.ResetColor();
+        var course = Console.ReadLine();
+
+        persons.Add(new Student(navn, age, course));
+
+        Console.WriteLine("Du er nå registrert! Trykk Enter for å gå tilbake til hovedmenyen.");
+        Console.ReadLine();
+        MainMenu();
+    }
+
+    public static void FilterCourses()
+    {
+        Console.WriteLine("Skriv Fotball, Håndball eller Tennis for å vise påmeldte:");
+        var valg = Console.ReadLine();
+        Console.ForegroundColor = ConsoleColor.DarkBlue;
+        Console.WriteLine($"\nDette er de påmeldte for {valg} kurset:");
+        Console.ResetColor();
+        foreach (var person in persons)
+            if (person.Course == valg)
+                Console.WriteLine("- " + person.Name);
+
+        Console.WriteLine("\n\nSkriv Fotball, Håndball eller Tennis for å vise påmeldte,");
+        Console.WriteLine("eller trykk ENTER for å gå tilbake til hovedmenyen:");
+        var input = Console.ReadLine();
+
+        if (string.IsNullOrEmpty(input))
+            MainMenu();
+        else
+            FilterCourses();
+    }
+
+    public static void DisplayUsers()
+    {
+        var groupedPersons = persons.GroupBy(x => x.Course);
+
+        foreach (var group in groupedPersons)
         {
-            Console.WriteLine($"Navn: {person.Name}, Alder: {person.Age}");
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine($"Kurs: {group.Key}");
+            Console.ResetColor();
+
+            foreach (var person in group) Console.WriteLine($"Navn: {person.Name}, Alder: {person.Age}");
+            
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine("\nTrykk Enter for å gå tilbake til hovedmenyen.");
+            Console.ResetColor();
         }
-        Console.WriteLine();
+
+        Console.ReadLine();
+        MainMenu();
     }
 }
