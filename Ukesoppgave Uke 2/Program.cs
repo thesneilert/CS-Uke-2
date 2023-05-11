@@ -56,3 +56,19 @@ else if (menyvalg == "2")
         }
     }
 }
+
+
+else if (menyvalg == "3")
+{
+    var groupedPersons = persons.GroupBy(x => x.Course);
+
+    foreach (var x in groupedPersons)
+    {
+        Console.WriteLine($"Kurs: {x.Key}");
+        foreach (var person in x)
+        {
+            Console.WriteLine($"Navn: {person.Name}, Alder: {person.Age}");
+        }
+        Console.WriteLine();
+    }
+}
