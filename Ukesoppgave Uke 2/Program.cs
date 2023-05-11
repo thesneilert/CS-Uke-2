@@ -41,6 +41,7 @@ internal class Program
         else
         {
             Console.WriteLine("Ugyldig valg. Prøv igjen.");
+            Console.Clear();
             MainMenu();
         }
     }
@@ -64,6 +65,7 @@ internal class Program
 
         Console.WriteLine("Du er nå registrert! Trykk Enter for å gå tilbake til hovedmenyen.");
         Console.ReadLine();
+        Console.Clear();
         MainMenu();
     }
 
@@ -82,10 +84,15 @@ internal class Program
         Console.WriteLine("eller trykk ENTER for å gå tilbake til hovedmenyen:");
         var input = Console.ReadLine();
 
-        if (string.IsNullOrEmpty(input))
+        if (input == "")
+        {
+            Console.Clear();
             MainMenu();
+        }
         else
+        {
             FilterCourses();
+        }
     }
 
     public static void DisplayUsers()
@@ -106,6 +113,7 @@ internal class Program
         }
 
         Console.ReadLine();
+        Console.Clear();
         MainMenu();
     }
 }
