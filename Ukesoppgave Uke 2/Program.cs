@@ -16,7 +16,10 @@ internal class Program
 
     public static void Main(string[] args)
     {
-        MainMenu();
+        while (true)
+        {
+            MainMenu();
+        }
     }
 
     public static void MainMenu()
@@ -42,7 +45,6 @@ internal class Program
         {
             Console.WriteLine("Ugyldig valg. Prøv igjen.");
             Console.Clear();
-            MainMenu();
         }
     }
 
@@ -66,33 +68,30 @@ internal class Program
         Console.WriteLine("Du er nå registrert! Trykk Enter for å gå tilbake til hovedmenyen.");
         Console.ReadLine();
         Console.Clear();
-        MainMenu();
     }
 
     public static void FilterCourses()
     {
         Console.WriteLine("Skriv Fotball, Håndball eller Tennis for å vise påmeldte:");
         var valg = Console.ReadLine();
-        Console.ForegroundColor = ConsoleColor.DarkBlue;
-        Console.WriteLine($"\nDette er de påmeldte for {valg} kurset:");
-        Console.ResetColor();
-        foreach (var person in persons)
-            if (person.Course == valg)
-                Console.WriteLine("- " + person.Name);
-
-        Console.WriteLine("\n\nSkriv Fotball, Håndball eller Tennis for å vise påmeldte,");
-        Console.WriteLine("eller trykk ENTER for å gå tilbake til hovedmenyen:");
-        var input = Console.ReadLine();
-
-        if (input == "")
+        if (string.IsNullOrWhiteSpace(valg))
         {
-            Console.Clear();
-            MainMenu();
+            Console.WriteLine("Ugyldig valg. Prøv igjen.");
         }
         else
         {
-            FilterCourses();
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine($"\nDette er de påmeldte for {valg} kurset:");
+            Console.ResetColor();
+            foreach (var person in persons)
+                if (person.Course == valg)
+                    Console.WriteLine("- " + person.Name);
         }
+
+        Console.WriteLine("\nTrykk Enter for å gå tilbake til hovedmenyen.");
+        var input = Console.ReadLine();
+
+        Console.Clear();
     }
 
     public static void DisplayUsers()
@@ -102,18 +101,16 @@ internal class Program
         foreach (var group in groupedPersons)
         {
             Console.ForegroundColor = ConsoleColor.DarkBlue;
-            Console.WriteLine($"Kurs: {group.Key}");
+            Console.WriteLine($"\nKurs: {group.Key}");
             Console.ResetColor();
 
             foreach (var person in group) Console.WriteLine($"Navn: {person.Name}, Alder: {person.Age}");
-            
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
-            Console.WriteLine("\nTrykk Enter for å gå tilbake til hovedmenyen.");
-            Console.ResetColor();
         }
 
+        Console.ForegroundColor = ConsoleColor.DarkBlue;
+        Console.WriteLine("\nTrykk Enter for å gå tilbake til hovedmenyen.");
+        Console.ResetColor();
         Console.ReadLine();
         Console.Clear();
-        MainMenu();
     }
 }
