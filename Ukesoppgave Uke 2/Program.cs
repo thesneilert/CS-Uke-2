@@ -62,6 +62,8 @@ internal class Program
         Console.WriteLine("Hvilket kurs går du på?");
         Console.ResetColor();
         var course = Console.ReadLine();
+        
+        //var capitalizedName = char.ToUpper(name[0]) + name.Substring(1);
 
         persons.Add(new Student(navn, age, course));
 
